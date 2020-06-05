@@ -5,39 +5,45 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">PRODUTOS</div>
+                <div class="card-header">CLIENTES</div>
 
-                @forelse ($products as $product)
+                @forelse ($clients as $client)
                     <div class="card-body">
-                    <a href="{{ $product->path() }}">
                         <div>
                             <label> NOME:
                                 <label>
-                                    {{ $product->name }}
+                                    {{ $client->name }}
                                 </label>
                             </label>
                         </div>
-
 
                         <div>
-                            <label> PREÇO:
+                            <label> TELEFONE:
                                 <label>
-                                    R$ {{ $product->value }}
+                                    {{ $client->phone }}
                                 </label>
                             </label>
                         </div>
-                    </a>
+
+                        <div>
+                            <label>DATA DE NASCIMENTO:
+                                <label>
+                                    {{ $client->birthdate }}
+                                </label>
+                            </label>
+                        </div>
 
                         <hr>
 
                     </div>
                 @empty
-                    <div class="card-body">Nenhum produto cadastrado.</div>
+                    <div class="card-body">Nenhum cliente cadastrado.</div>
                 @endforelse
+
                 <div class="card-body">
                     <h5>
                         <div>
-                            <a href="{{ route('addProduct') }}">Adicionar Produto</a>
+                            <a href="{{ route('addClient') }}">Cadastrar Cliente</a>
                         </div>
                     </h5>
                 </div>
