@@ -18,9 +18,7 @@ class ClientsController extends Controller
     public function show(Client $client)
     {
         return view('clients.show', [
-            'name' => $client,
-            'phone' => $client,
-            'birthdate' => $client,
+            'client' => $client,
         ]);
     }
 

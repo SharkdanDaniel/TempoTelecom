@@ -37,7 +37,6 @@ class OrdersController extends Controller
         $client = Client::find($request->client_id);
         $order = new Order(['client_id' => $client->id]);
         $order = $client->order()->save($order);
-        $order = $client->order()->save($order);
         foreach($request->products as $product){
             $array_products = ['order_id' => $order->id, 'product_id' => $product];
             $order->products()->attach($array_products);

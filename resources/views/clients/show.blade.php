@@ -8,15 +8,27 @@
                 <div class="card-header"></div>
 
                     <div class="card-body">
-                            <label>
-                                {{ $client->name }}
+                        <div>
+                            <label> NOME:
+                                <label>
+                                    {{ $client->name }}
+                                </label>
                             </label>
-                            <label>
-                                {{ $client->phone }}
+                        </div>
+                        <div>
+                            <label> TELEFONE:
+                                <label>
+                                    {{ $client->phone }}
+                                </label>
                             </label>
-                            <label>
-                                {{ $client->birthdate }}
+                        </div>
+                        <div>
+                            <label> DATA DE NASCIMENTO:
+                                <label>
+                                    {{ $client->birthdate }}
+                                </label>
                             </label>
+                        </div>
                             <hr>
                     </div>
 

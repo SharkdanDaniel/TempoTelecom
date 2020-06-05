@@ -8,15 +8,30 @@
                 <div class="card-header"></div>
 
                     <div class="card-body">
-                            <label>
-                                {{ $product->id }}
+                        <div>
+                            <label> CÓDIGO DO PRODUTO:
+                                <label>
+                                    {{ $product->id }}
+                                </label>
                             </label>
-                            <label>
-                                {{ $product->name }}
+                        </div>
+
+                        <div>
+                            <label> NOME:
+                                <label>
+                                    {{ $product->name }}
+                                </label>
                             </label>
-                            <label>
-                                R$ {{ $product->value }}
+                        </div>
+
+
+                        <div>
+                            <label> PREÇO:
+                                <label>
+                                    R$ {{ $product->value }}
+                                </label>
                             </label>
+                        </div>
                             <hr>
                     </div>
             </div>

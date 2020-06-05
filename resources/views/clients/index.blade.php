@@ -8,7 +8,8 @@
                 <div class="card-header">CLIENTES</div>
 
                 @forelse ($clients as $client)
-                    <div class="card-body">
+                <div class="card-body">
+                    <a href="">
                         <div>
                             <label> NOME:
                                 <label>
@@ -16,24 +17,9 @@
                                 </label>
                             </label>
                         </div>
+                    </a>
 
-                        <div>
-                            <label> TELEFONE:
-                                <label>
-                                    {{ $client->phone }}
-                                </label>
-                            </label>
-                        </div>
-
-                        <div>
-                            <label>DATA DE NASCIMENTO:
-                                <label>
-                                    {{ $client->birthdate }}
-                                </label>
-                            </label>
-                        </div>
-
-                        <hr>
+                    <hr>
 
                     </div>
                 @empty

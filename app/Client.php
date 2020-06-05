@@ -12,4 +12,11 @@ class Client extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    public function path($append = '')
+    {
+        $path = route('client', $this->name);
+
+        return $append ? "{$path}/{$append}" : $path;
+    }
 }
