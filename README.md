@@ -86,12 +86,12 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Passos de instalação
 
-1 - Instalar o PHP, Composer e MySQL
-2 - git clone git@github.com:SharkdanDaniel/TempoTelecom.git
-3 - Dentro da pasta, abra o console e digite #composer install
-4 - Criar um novo .env a partir do .env exemple 
-5 - Digitar no console #php artisan key::genarate
-6 - Criar um banco de dados com o mesmo nome do .env
-7 - Digitar no console #php artisan migrate
-8 - #php artisan serve
-9 - Acessar o projeto pelo link http://localhost:8000
+<p>1 - Instalar o PHP, Composer e MySQL</p>
+<p>2 - git clone git@github.com:SharkdanDaniel/TempoTelecom.git</p>
+<p>3 - Dentro da pasta, abra o console e digite #composer install</p>
+<p>4 - Criar um novo .env a partir do .env exemple </p>
+<p>5 - Digitar no console #php artisan key::genarate</p>
+<p>6 - Criar um banco de dados com o mesmo nome do .env</p>
+<p>7 - Digitar no console #php artisan migrate</p>
+<p>8 - #php artisan serve</p>
+<p>9 - Acessar o projeto pelo link http://localhost:8000</p>
