@@ -33,6 +33,14 @@
                                 </label>
                             </label>
                         </div>
+
+                        <div>
+                            <label> VALOR:
+                                <label>
+                                    {{ $order->valorNota }}
+                                </label>
+                            </label>
+                        </div>
                     </a>
 
                     <hr>

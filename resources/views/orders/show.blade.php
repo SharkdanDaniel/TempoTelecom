@@ -30,13 +30,12 @@
                                 {{ $order->created_at }}
                             </label>
                         </label>
-                    </div>
-
-                    @foreach( $order->products->get() as $product )
+                    </div>                    
+                    @foreach( $produtos as $product )                    
                         <div>
                             <label> ID:
                                 <label>
-                                    {{ $product->id }}
+                                    {{ $product[0]->id }}
                                 </label>
                             </label>
                         </div>
@@ -44,7 +43,7 @@
                         <div>
                             <label> NAME:
                                 <label>
-                                    {{ $product->name }}
+                                    {{ $product[0]->name }}
                                 </label>
                             </label>
                         </div>
@@ -52,7 +51,7 @@
                         <div>
                             <label> VALOR:
                                 <label>
-                                    {{ $product->value }}
+                                    {{ $product[0]->value }}
                                 </label>
                             </label>
                         </div>

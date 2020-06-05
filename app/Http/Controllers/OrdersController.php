@@ -5,22 +5,39 @@ namespace App\Http\Controllers;
 use App\Client;
 use App\Product;
 use App\Order;
+use App\OrderProduct;
 use App\User;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class OrdersController extends Controller
 {
     public function index()
-    {
-        $orders = Order::all();
+    {                      
+        $valorNota = [];  
+        $orders = Order::all()->map(function ($order) use($valorNota) {
+            $ordersProducts = OrderProduct::where('order_id' , $order->id)->get();            
+            foreach ($ordersProducts as $orderProduct) {
+                $product = Product::where('id' , $orderProduct->product_id)->get();
+                array_push($valorNota,$product[0]->value);
+            }    
+            $order->valorNota = array_sum($valorNota);           
+            return $order;
+        });      
+                
         return view('orders.index', compact('orders'));
     }
 
     public function show(Order $order)
     {
+        $produtos = new Collection();
+
+        foreach ($order->products()->get() as $product) {
+            $produtos->push(Product::where('id', $product->product_id)->get());
+        }
         return view('orders.show', [
-            'order' => $order,
+            'order' => $order, 'produtos' => $produtos
         ]);
     }
 
@@ -38,7 +55,7 @@ class OrdersController extends Controller
         $order = $client->order()->save($order);
         foreach ($request->products as $product) {
             $order->products()->create(['product_id' => $product, 'order_id' => $order->id]);
-      }
+        }
 
         $orders = Order::all();
         return view('orders.index', compact('orders'));
