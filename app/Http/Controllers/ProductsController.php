@@ -43,6 +43,6 @@ class ProductsController extends Controller
         ]);
 
         $products = Product::all();
-        return view('products.index', compact('products'));
+        return redirect()->route('products', compact('products'));
     }
 }

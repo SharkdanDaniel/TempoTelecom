@@ -14,18 +14,18 @@ use Illuminate\Support\Facades\Validator;
 class OrdersController extends Controller
 {
     public function index()
-    {                      
-        $valorNota = [];  
+    {
+        $valorNota = [];
         $orders = Order::all()->map(function ($order) use($valorNota) {
-            $ordersProducts = OrderProduct::where('order_id' , $order->id)->get();            
+            $ordersProducts = OrderProduct::where('order_id' , $order->id)->get();
             foreach ($ordersProducts as $orderProduct) {
                 $product = Product::where('id' , $orderProduct->product_id)->get();
                 array_push($valorNota,$product[0]->value);
-            }    
-            $order->valorNota = array_sum($valorNota);           
+            }
+            $order->valorNota = array_sum($valorNota);
             return $order;
-        });      
-                
+        });
+
         return view('orders.index', compact('orders'));
     }
 
@@ -58,6 +58,6 @@ class OrdersController extends Controller
         }
 
         $orders = Order::all();
-        return view('orders.index', compact('orders'));
+        return redirect()->route('orders', compact('orders'));
     }
 }

@@ -30,10 +30,10 @@
                                 {{ $order->created_at }}
                             </label>
                         </label>
-                    </div>                    
-                    @foreach( $produtos as $product )                    
+                    </div>
+                    @foreach( $produtos as $product )
                         <div>
-                            <label> ID:
+                            <label> CÓDIGO DO PRODUTO:
                                 <label>
                                     {{ $product[0]->id }}
                                 </label>

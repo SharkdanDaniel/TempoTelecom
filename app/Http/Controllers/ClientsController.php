@@ -45,6 +45,6 @@ class ClientsController extends Controller
         ]);
 
         $clients = Client::all();
-        return view('clients.index', compact('clients'));
+        return redirect()->route('clients', compact('clients'));
     }
 }
