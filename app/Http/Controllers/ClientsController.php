@@ -38,10 +38,13 @@ class ClientsController extends Controller
 
     protected function store(Request $request)
     {
-        return Client::create([
+            Client::create([
             'name' => $request['name'],
             'phone' => $request['phone'],
             'birthdate' => $request['birthdate']
         ]);
+
+        $clients = Client::all();
+        return view('clients.index', compact('clients'));
     }
 }

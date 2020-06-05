@@ -8,14 +8,35 @@
                 <div class="card-header">PEDIDOS</div>
 
                 @forelse ($orders as $order)
-                    <div class="card-body">
-                            <label>
-                                {{ $order->id }}
+                <div class="card-body">
+                    <a href="{{ $order->path() }}">
+                        <div>
+                            <label> NUMERO DO PEDIDO:
+                                <label>
+                                    {{ $order->id }}
+                                </label>
                             </label>
-                            <label>
-                                {{ $order->client_id }}
+                        </div>
+
+                        <div>
+                            <label> NOME DO CLIENTE:
+                                <label>
+                                    {{ $order->client->name }}
+                                </label>
                             </label>
-                            <hr>
+                        </div>
+
+                        <div>
+                            <label> DATA DO PEDIDO:
+                                <label>
+                                    {{ $order->created_at }}
+                                </label>
+                            </label>
+                        </div>
+                    </a>
+
+                    <hr>
+
                     </div>
                 @empty
                     <div class="card-body">Nenhum pedido cadastrado.</div>

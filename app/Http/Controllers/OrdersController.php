@@ -20,8 +20,7 @@ class OrdersController extends Controller
     public function show(Order $order)
     {
         return view('orders.show', [
-            'id' => $order,
-            'client_id' => $order,
+            'order' => $order,
         ]);
     }
 
@@ -37,9 +36,11 @@ class OrdersController extends Controller
         $client = Client::find($request->client_id);
         $order = new Order(['client_id' => $client->id]);
         $order = $client->order()->save($order);
-        foreach($request->products as $product){
-            $array_products = ['order_id' => $order->id, 'product_id' => $product];
-            $order->products()->attach($array_products);
-        }
+        foreach ($request->products as $product) {
+            $order->products()->create(['product_id' => $product, 'order_id' => $order->id]);
+      }
+
+        $orders = Order::all();
+        return view('orders.index', compact('orders'));
     }
 }

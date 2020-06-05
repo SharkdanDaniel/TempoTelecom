@@ -1,5 +1,6 @@
 <?php
 
+use App\OrderProduct;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +24,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/clients/register', 'ClientsController@create')->name('addClient');
-Route::post('/clients/register', 'ClientsController@store');
 Route::get('/clients', 'ClientsController@index')->name('clients');
-Route::get('/clients/{client:name}', 'ClientsController@show');
+Route::post('/clients/register', 'ClientsController@store');
+Route::get('/clients/{client:name}', 'ClientsController@show')->name('client');
 
 
 Route::get('/products', 'ProductsController@index')->name('products');
@@ -37,5 +38,9 @@ Route::get('/products/{product:id}', 'ProductsController@show')->name('product')
 Route::get('/orders/register', 'OrdersController@create')->name('addOrder');
 Route::post('/orders/register', 'OrdersController@store');
 Route::get('/orders', 'OrdersController@index')->name('orders');
-Route::get('/orders/{order:id}', 'OrdersController@show');
+Route::get('/orders/{order:id}', 'OrdersController@show')->name('order');
+
+Route::get('/produtos', function () {
+    dd(OrderProduct::find(16)->get(save));
+});
 

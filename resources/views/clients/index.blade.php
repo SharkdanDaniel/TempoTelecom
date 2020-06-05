@@ -9,7 +9,7 @@
 
                 @forelse ($clients as $client)
                 <div class="card-body">
-                    <a href="">
+                    <a href="{{ $client->path() }}">
                         <div>
                             <label> NOME:
                                 <label>

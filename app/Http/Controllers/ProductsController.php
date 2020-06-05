@@ -37,11 +37,12 @@ class ProductsController extends Controller
 
     protected function store(Request $request)
     {
-        return Product::create([
+        Product::create([
             'name' => $request['name'],
             'value' => $request['value']
         ]);
 
-        return view('welcome');
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 }

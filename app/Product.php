@@ -10,7 +10,7 @@ class Product extends Model
 
     public function order()
     {
-        return $this->hasMany(Order::class, 'order_product', 'order_id', 'id');
+        return $this->hasMany(OrderProduct::class);
     }
 
     public function path($append = '')

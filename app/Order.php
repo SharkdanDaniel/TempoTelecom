@@ -15,6 +15,13 @@ class Order extends Model
 
     public function products()
     {
-        return $this->hasMany(Product::class, 'order_product','product_id', 'id');
+        return $this->hasMany(OrderProduct::class);
+    }
+
+    public function path($append = '')
+    {
+        $path = route('order', $this->id);
+
+        return $append ? "{$path}/{$append}" : $path;
     }
 }
