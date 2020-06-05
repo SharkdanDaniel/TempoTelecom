@@ -83,3 +83,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Passos de instalação
+
+1 - Instalar o PHP, Composer e MySQL
+2 - git clone git@github.com:SharkdanDaniel/TempoTelecom.git
+3 - Dentro da pasta, abra o console e digite #composer install
+4 - Criar um novo .env a partir do .env exemple 
+5 - Digitar no console #php artisan key::genarate
+6 - Criar um banco de dados com o mesmo nome do .env
+7 - Digitar no console #php artisan migrate
+8 - #php artisan serve
+9 - Acessar o projeto pelo link http://localhost:8000
