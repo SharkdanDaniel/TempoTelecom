@@ -1,3 +1,15 @@
+## Passos de instalação
+
+<p>1 - Instalar o PHP, Composer e MySQL</p>
+<p>2 - git clone git@github.com:SharkdanDaniel/TempoTelecom.git</p>
+<p>3 - Dentro da pasta, abra o console e digite #composer install</p>
+<p>4 - Criar um novo .env a partir do .env exemple </p>
+<p>5 - Digitar no console #php artisan key::genarate</p>
+<p>6 - Criar um banco de dados com o mesmo nome do .env</p>
+<p>7 - Digitar no console #php artisan migrate</p>
+<p>8 - #php artisan serve</p>
+<p>9 - Acessar o projeto pelo link http://localhost:8000</p>
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
@@ -84,14 +96,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
-## Passos de instalação
-
-<p>1 - Instalar o PHP, Composer e MySQL</p>
-<p>2 - git clone git@github.com:SharkdanDaniel/TempoTelecom.git</p>
-<p>3 - Dentro da pasta, abra o console e digite #composer install</p>
-<p>4 - Criar um novo .env a partir do .env exemple </p>
-<p>5 - Digitar no console #php artisan key::genarate</p>
-<p>6 - Criar um banco de dados com o mesmo nome do .env</p>
-<p>7 - Digitar no console #php artisan migrate</p>
-<p>8 - #php artisan serve</p>
-<p>9 - Acessar o projeto pelo link http://localhost:8000</p>
